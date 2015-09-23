@@ -1,0 +1,18 @@
+#bigpic1 {
+    width: 600px;
+    height: 600px;
+}
+
+#top1 {
+    background-image: top.jpg;
+}
+
+#brand1 {
+    font-size: 32px;
+    font-family: sans-serif;
+    font-color: #fff;
+}
+
+#second {
+    padding: 300px;
+}
