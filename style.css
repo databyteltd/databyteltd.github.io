@@ -53,6 +53,11 @@ img {
     margin-right: 40px;
 }
 
+.logo a {
+    text-decoration: none;
+    color: black;
+}
+
 .cover {
     margin-top: 10px;
     max-width: 1680px;
@@ -76,13 +81,14 @@ img {
 
 .intro-item img {
     border: 1px solid;
-    border-radius: 5px;
+    border-radius: 10px;
     border-color: silver;
     height: auto;
 }
 
 .intro-item p {
     clear: both;
+    margin-top: 10px;
 }
 
 .intro-item {
@@ -99,7 +105,7 @@ img {
 }
 
 .footer {
-    background: #336666;
+    background: #005AB5;
     color: white;
     margin-top: 10px;
     padding: 5px 20px 10px 20px;
@@ -134,10 +140,10 @@ img {
 
 .footcontact {
     text-decoration: none;
-    color: #00EC00;
+    color: #F9F900;
     border: 3px solid;
     border-radius: 10px;
-    border-color: #00BB00;
+    border-color: #FF0000;
     margin-top: -5px;
 }
 
