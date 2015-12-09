@@ -1,0 +1,99 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.navframe {
+    width: 1007px;
+    margin: 0 auto;
+}
+
+.nav {
+    position: relative;
+}
+
+.navlogo a img {
+    width: 18%;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
+}
+
+.itemnav {
+    float: right;
+    position: absolute;
+    bottom: 20%;
+    right: 0;
+}
+
+.navitem {
+    float: right;
+    text-align: center;
+    margin-right: 35px;
+}
+
+.navitem a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #005CAF;
+    font-family: sans-serif;
+    text-shadow: 1px 1px 4px #BDC0BA;
+}
+
+.navitem a:hover {
+    text-shadow: 0px 0px 10px #78C2C4;
+}
+
+.navitem span {
+    margin-right: 5px;
+}
+
+.productnavframe {
+    width: 1007px;
+    margin: 0 auto;
+}
+
+.productnav {
+    height: 45px;
+    line-height: 45px;
+    background-color: #FFB11B;
+}
+
+.productnavitem {
+    float: left;
+    text-align: center;
+    margin: 0 auto 0 35px;
+}
+
+.productnavitem a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #005CAF;
+    font-family: sans-serif;
+}
+
+.productnavitem a:hover {
+    text-shadow: 0px 0px 30px #fff, 0px 0px 30px #fff, 0px 0px 30px #fff;
+}
+
+.jumboframe {
+    width: 1007px;
+    margin: 0 auto;
+}
+
+.itemframe {
+    width: 1007px;
+    margin: 0 auto;
+}
+
+.footerframe {
+    width: 1007px;
+    margin: 0 auto;
+}
