@@ -1,3 +1,5 @@
+/* All */
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -9,6 +11,9 @@
     clear: both;
 }
 
+
+/* Nav Bar */
+
 .navframe {
     width: 1007px;
     margin: 0 auto;
@@ -19,7 +24,7 @@
 }
 
 .navlogo a img {
-    width: 18%;
+    width: 19%;
     height: auto;
     margin-top: 10px;
     margin-left: 10px;
@@ -40,7 +45,7 @@
 }
 
 .navitem a {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: bold;
     color: #005CAF;
     font-family: sans-serif;
@@ -73,7 +78,7 @@
 }
 
 .productnavitem a {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: bold;
     color: #005CAF;
     font-family: sans-serif;
@@ -83,17 +88,132 @@
     text-shadow: 0px 0px 30px #fff, 0px 0px 30px #fff, 0px 0px 30px #fff;
 }
 
+
+/* Big Pic */
+
+.jumbo {
+    background-color: #E0E0E0;
+    height: auto;
+}
+
 .jumboframe {
     width: 1007px;
     margin: 0 auto;
+    height: auto;
 }
+
+.jumboitem {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.jumboitem a img {
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Products Item */
 
 .itemframe {
     width: 1007px;
-    margin: 0 auto;
+    margin: 30px auto 0 auto;
+    height: auto;
+}
+
+.itemrow {
+    width: 90%;
+    margin: 40px auto 0 auto;
+    //background-color: red;
+}
+
+.item {
+    width: 29%;
+    float: left;
+    margin: 0 2%;
+    //background-color: yellow;
+}
+
+.itempic {}
+
+.itempic a img:hover {
+    padding-left: 3%
+}
+
+.itemtitle {
+    margin: 0 0 5px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0F75CF;
+    font-family: sans-serif;
+    //text-shadow: 1px 1px 4px #BDC0BA;
+}
+
+.itemcontent {}
+
+.link {
+    margin-top: 10px;
+    width: 120px;
+    height: 28px;
+    background-image: url(../images/tag-full-small.png);
+    background-repeat: no-repeat;
+}
+
+.linkin {
+    padding-left: 8%;
+    line-height: 28px;
+    font-size: 16px;
+    color: #0F75CF;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+.link:hover {
+    background-image: url(../images/tag-empty-small.png);
+    background-repeat: no-repeat;
+}
+
+.linkin:hover {
+    color: #E89700;
+}
+
+
+/* Footer */
+
+.footer {
+    height: 70px;
+    background: #D5D6D3;
 }
 
 .footerframe {
     width: 1007px;
-    margin: 0 auto;
+    margin: 35px auto 0 auto;
+    padding: 0 40px;
+}
+
+.footercontent {
+    float: left;
+    font-size: 25px;
+    font-weight: bold;
+    color: #005CAF;
+    font-family: sans-serif;
+    line-height: 70px;
+}
+
+.footercontact a {
+    font-size: 25px;
+    font-weight: bold;
+    color: #005CAF;
+    font-family: sans-serif;
+    line-height: 70px;
+}
+
+.footercontent span {
+    margin-right: 5px;
+}
+
+#fax {
+    margin-left: 50px;
+    margin-right: 50px;
 }
