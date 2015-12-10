@@ -92,7 +92,10 @@
 /* Big Pic */
 
 .jumbo {
-    background-color: #E0E0E0;
+    background-image: url(../images/photo-1430263326118-b75aa0da770b.jpg);
+    background-repeat: no-repeat;
+    background-position: 60% 50%;
+    background-size: 100% 100%;
     height: auto;
 }
 
@@ -183,7 +186,7 @@
 
 .footer1 {
     height: 50px;
-    background: #999999;
+    background: #B3B3B3;
 }
 
 .footer2 {
