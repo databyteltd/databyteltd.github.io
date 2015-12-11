@@ -98,15 +98,15 @@
         margin: 30px auto 35px auto;
         height: auto;
     }
-    .itemrow {
+    /*.itemrow {
         width: 90%;
         margin: 40px auto 0 auto;
         //background-color: red;
-    }
+    } */
     .item {
-        width: 29%;
+        width: 27%;
         float: left;
-        margin: 0 2%;
+        margin: 0 0 0 5.3%;
         //background-color: yellow;
     }
     .itempic {}
@@ -213,7 +213,7 @@
     }
     .nav {}
     .navlogo a img {
-        width: 19%;
+        width: 40%;
         height: auto;
         margin: 5px 0 0 5px;
     }
@@ -247,6 +247,7 @@
         height: 28px;
         line-height: 28px;
         background-color: #FFB11B;
+        display: none;
     }
     .productnavitem {
         float: left;
@@ -262,28 +263,30 @@
     .productnavitem a:hover {
         text-shadow: 0px 0px 30px #fff, 0px 0px 30px #fff, 0px 0px 30px #fff;
     }
-    /* 12/10 寫到自適應，卡在無法讓圖片自動縮小。*/
     /* Big Pic */
     .jumbo {
         background-image: url(../images/photo-1430263326118-b75aa0da770b.jpg);
         background-repeat: no-repeat;
-        background-size: 480px auto;
-        height: auto;
+        background-size: 1000px auto;
+        height: 250px;
+        overflow: hidden;
+        margin-top: 10px;
     }
     .jumboframe {
         width: 320px;
         margin: 0 auto;
         height: auto;
     }
-    /*.jumboitem {
-        width: 70%;
+    .jumboitem {
+        width: 100%;
         margin: 0 auto;
-    }*/
+    }
     .jumboitem a img {
         display: block;
         margin: 0 auto;
-        max-width: 480px;
+        max-width: 100%;
         height: auto;
+        padding-top: 8%;
     }
     /* Products Item */
     .itemframe {
@@ -291,30 +294,37 @@
         margin: 30px auto 35px auto;
         height: auto;
     }
-    .itemrow {
-        width: 90%;
-        margin: 40px auto 0 auto;
-        //background-color: red;
-    }
     .item {
-        width: 29%;
-        float: left;
-        margin: 0 2%;
+        max-width: 280px;
+        margin: 0 2% 50px 4%;
         //background-color: yellow;
     }
-    .itempic {}
+    .itempic {
+        width: 280px;
+        margin: 0 auto 5px auto;
+        text-align: center;
+    }
+    .itempic a img {
+        width: 55%;
+        height: auto;
+    }
     .itempic a img:hover {
         padding-left: 3%
     }
     .itemtitle {
-        margin: 0 0 5px 0;
+        width: 280px;
+        margin: 0 auto 5px auto;
         font-size: 20px;
         font-weight: bold;
         color: #0F75CF;
         font-family: sans-serif;
         //text-shadow: 1px 1px 4px #BDC0BA;
     }
-    .itemcontent {}
+    .itemcontent {
+        width: 320px;
+        margin: 0 auto 5px auto;
+        font-size: 18px;
+    }
     .link {
         margin-top: 10px;
         width: 120px;
@@ -340,30 +350,30 @@
     }
     /* Footer */
     .footer1 {
-        height: 50px;
-        background: #B3B3B3;
+        background: #BFBFBF;
     }
     .footer2 {
-        height: 40px;
         background: #7A7A7A;
         text-align: center;
     }
     .footerframe {
         width: 320px;
         margin: 0px auto 0 auto;
-        padding: 0 40px;
+        padding: 0 10px;
     }
     .footerin {
         width: 80%;
         margin: 0 auto;
     }
     .footercontent {
-        float: left;
         font-size: 18px;
         font-weight: bold;
         color: #fff;
         font-family: sans-serif;
         line-height: 50px;
+    }
+    .footercontact {
+        display: none;
     }
     .footercontact a {
         font-size: 18px;
@@ -375,12 +385,8 @@
     .footercontent span {
         margin-right: 5px;
     }
-    #fax {
-        margin-left: 50px;
-        margin-right: 50px;
-    }
     .footerlogo {
-        font-size: 18px;
+        font-size: 15px;
         font-weight: bold;
         color: #fff;
         font-family: sans-serif;
