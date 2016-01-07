@@ -125,6 +125,10 @@
     .indexproductdemoimg {
         float: left;
         margin: 0 0 20px 5.3%;
+        width: 19%;
+    }
+    .indexproductdemoimg a img:hover {
+        padding-left: 4%;
     }
     .indexproductdemocontent {
         float: left;
@@ -237,6 +241,9 @@
         line-height: 50px;
     }
     .footercontent span {
+        margin-right: 5px;
+    }
+    .footercontact span {
         margin-right: 5px;
     }
     #fax {

@@ -78,13 +78,13 @@
         text-shadow: 0px 0px 30px #fff, 0px 0px 30px #fff, 0px 0px 30px #fff;
     }
     /* News Content */
-    .cd-container {
+    .container {
         /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
         width: 90%;
         max-width: 1170px;
         margin: 0 auto;
     }
-    .cd-container::after {
+    .container::after {
         /* clearfix */
         content: '';
         display: table;
@@ -95,13 +95,13 @@
 Main components 
 
 -------------------------------- */
-    #cd-timeline {
+    #timeline {
         position: relative;
         padding: 2em 0;
         margin-top: 2em;
         margin-bottom: 2em;
     }
-    #cd-timeline::before {
+    #timeline::before {
         /* this is the vertical line */
         content: '';
         position: absolute;
@@ -111,22 +111,22 @@ Main components
         width: 4px;
         background: #BED9ED;
     }
-    .cd-timeline-block {
+    .timelineblock {
         position: relative;
         margin: 2em 0;
     }
-    .cd-timeline-block:after {
+    .timelineblock:after {
         content: "";
         display: table;
         clear: both;
     }
-    .cd-timeline-block:first-child {
+    .timelineblock:first-child {
         margin-top: 0;
     }
-    .cd-timeline-block:last-child {
+    .timelineblock:last-child {
         margin-bottom: 0;
     }
-    .cd-timeline-img {
+    .timelineimg {
         position: absolute;
         top: 20px;
         left: 0;
@@ -135,7 +135,7 @@ Main components
         border-radius: 50%;
         box-shadow: 0 0 0 5px #FFB11B, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
     }
-    .cd-timeline-img span {
+    .timelineimg span {
         /*display: block;
         /* width: 24px;
         height: 24px;*/
@@ -147,16 +147,13 @@ Main components
         font-size: 20px;
         color: white;
     }
-    .cd-timeline-img.cd-picture1 {
+    .timelineimg.picture1 {
         background: #005CAF;
     }
-    .cd-timeline-img.cd-picture2 {
+    .timelineimg.picture2 {
         background: #02A8AB;
     }
-    .cd-timeline-img.cd-movie {
-        background: #c03b44;
-    }
-    .cd-timeline-content {
+    .timelinecontent {
         position: relative;
         margin-left: 60px;
         background: #D4E8F7;
@@ -164,32 +161,38 @@ Main components
         padding: 1em;
         box-shadow: 3px 3px 0 #8BB6D6;
     }
-    .cd-timeline-content:after {
+    .timelinecontent:after {
         content: "";
         display: table;
         clear: both;
     }
-    .cd-timeline-content h2 {
+    .timelinecontent h2 {
+        font-weight: bold;
+        font-size: 21px;
         color: #303e49;
     }
-    .cd-timeline-content p,
-    .cd-timeline-content .cd-date {
+    .timelinecontent p,
+    .timelinecontent .date {
         font-size: 13px;
         font-size: 0.8125rem;
     }
-    .cd-timeline-content .cd-date {
+    .timelinecontent .date {
         display: inline-block;
     }
-    .cd-timeline-content p {
+    .timelinecontent p {
         margin: 1em 0;
         line-height: 1.6;
     }
-    .cd-timeline-content .cd-date {
+    .timelinecontent img {
+        display: block;
+        padding: 15px;
+    }
+    .timelinecontent .date {
         float: left;
         padding: .8em 0;
         opacity: .7;
     }
-    .cd-timeline-content::before {
+    .timelinecontent::before {
         content: '';
         position: absolute;
         top: 31px;
@@ -234,6 +237,9 @@ Main components
         line-height: 50px;
     }
     .footercontent span {
+        margin-right: 5px;
+    }
+    .footercontact span {
         margin-right: 5px;
     }
     #fax {

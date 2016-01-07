@@ -43,7 +43,7 @@
         text-shadow: 1px 1px 4px #BDC0BA;
     }
     .navitem a:hover {
-        text-shadow: 0px 0px 10px #78C2C4;
+        text-shadow: 0px 0px 0px #78C2C4;
     }
     .navitem span {
         margin-right: 5px;

@@ -43,7 +43,7 @@
         text-shadow: 1px 1px 4px #BDC0BA;
     }
     .navitem a:hover {
-        text-shadow: 0px 0px 10px #78C2C4;
+        text-shadow: 0px 0px 0px #78C2C4;
     }
     .navitem span {
         margin-right: 5px;
@@ -91,7 +91,7 @@
         margin: 0 6px;
     }
     .path span a {
-        color: black;
+        color: gray;
     }
     .path span a:visited {
         color: gray;
@@ -125,7 +125,7 @@
     .productsitem {}
     .productscontent {
         float: left;
-        width: 55%;
+        width: 59%;
         height: auto;
         padding: 2% 0 2% 3%;
     }
@@ -148,12 +148,14 @@
         font-family: sans-serif;
         margin-bottom: 10px;
     }
+    .productstext br {}
     .productstext {
         font-size: 18px;
         color: #005CAF;
         font-family: sans-serif;
         margin: 20px 0;
     }
+    .productstext br::af {}
     .littleimg {
         width: 28%;
         float: left;
@@ -212,6 +214,9 @@
         line-height: 50px;
     }
     .footercontent span {
+        margin-right: 5px;
+    }
+    .footercontact span {
         margin-right: 5px;
     }
     #fax {
