@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Slide Show</title>
+    <style type="text/css">
+    #img1 {
+        opacity: 1;
+    }
+    
+    #img2 {
+        display: none;
+        opacity: 0;
+    }
+    
+    #img3 {
+        display: none;
+        opacity: 0;
+    }
+    </style>
+</head>
+
+<body onload="init();">
+    <div class="img" id="img1"><img src="2503N-L.png" height="208" width="208" alt=""></div>
+    <div class="img" id="img2"><img src="2529N-L.png" height="208" width="208" alt=""></div>
+    <div class="img" id="img3"><img src="3521N-L.png" height="208" width="208" alt=""></div>
+    <button onclick="pic1()">1</button>
+    <button onclick="pic2()">2</button>
+    <button onclick="pic3()">3</button>
+    <script type="text/javascript" src="change.js"></script>
+</body>
+
+</html>
