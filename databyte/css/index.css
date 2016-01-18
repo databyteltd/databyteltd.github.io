@@ -354,7 +354,7 @@
         position: relative;
         top: 0px;
         overflow: hidden;
-        height: 255px;
+        height: 270px;
     }
     .iconproduct {
         padding-top: 10px;
@@ -393,7 +393,7 @@
     }
     @keyframes listback {
         0% {
-            height: 255px;
+            height: 270px;
         }
         100% {
             height: 0px;
@@ -404,7 +404,7 @@
             height: 0px;
         }
         100% {
-            height: 255px;
+            height: 270px;
         }
     }
     @keyframes navanigo {
