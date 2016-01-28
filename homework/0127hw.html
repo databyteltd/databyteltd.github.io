@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <script type="text/javascript">
+    var ctx;
+    var ctx2;
+    var objs;
+    var x1, x2, y1, y2, r, x3, y3;
+    window.onload = function() {
+        ctx = document.getElementById("cvs").getContext("2d");
+        ctx2 = document.getElementById("cvs2").getContext("2d");
+        objs = [];
+        ctx2.canvas.addEventListener("mousedown", dot1);
+        ctx2.canvas.addEventListener("mouseup", dot2);
+        window.setInterval(refresh, 5);
+    };
+
+    function dot1(e) {
+        x1 = e.pageX - ctx2.canvas.offsetLeft;
+        y1 = e.pageY - ctx2.canvas.offsetTop;
+        ctx2.canvas.addEventListener("mousemove", fakeDot2);
+        ctx2.canvas.style.cursor = "crosshair";
+    }
+
+    function fakeDot2(e) {
+        x3 = e.pageX - ctx2.canvas.offsetLeft;
+        y3 = e.pageY - ctx2.canvas.offsetTop;
+        fakeLine(x1, y1, x3, y3);
+    }
+
+    function fakeLine(x1, y1, x3, y3) {
+        ctx2.clearRect(0, 0, ctx2.canvas.width, ctx2.canvas.height);
+        ctx2.beginPath();
+        ctx2.moveTo(x1, y1);
+        ctx2.lineTo(x3, y3);
+        ctx2.stroke();
+    }
+
+    function dot2(e) {
+        x2 = e.pageX - ctx2.canvas.offsetLeft;
+        y2 = e.pageY - ctx2.canvas.offsetTop;
+        ctx2.canvas.removeEventListener("mousemove", fakeDot2);
+        ctx2.clearRect(0, 0, ctx2.canvas.width, ctx2.canvas.height);
+        r = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+        ctx2.canvas.style.cursor = "default";
+        objs.push(new RightRect(x1, y1, x2, y2, r));
+    }
+
+    function refresh() {
+        //清空畫面
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        //更新物件資料
+        for (var i = 0; i < objs.length; i++) {
+            objs[i].update();
+        }
+        //重繪物件
+        for (var j = 0; j < objs.length; j++) {
+            objs[j].draw();
+        }
+    }
+
+    function RightRect(x1, y1, x2, y2, r) {
+        this.size = Math.random() * 40 + 10; //50~100
+        if (x1 <= this.size && y1 <= this.size) {
+            x1 = this.size + 1;
+            y1 = this.size + 1;
+        } else if (x1 <= this.size && y1 >= 450 - this.size) {
+            x1 = this.size + 1;
+            y1 = 450 - this.size - 1;
+        } else if (x1 >= 600 - this.size && y1 <= this.size) {
+            x1 = 600 - this.size - 1;
+            y1 = this.size + 1;
+        } else if (x1 >= 600 - this.size && y1 >= 450 - this.size) {
+            x1 = 600 - this.size - 1;
+            y1 = 450 - this.size - 1;
+        } else if (x1 <= this.size) {
+            x1 = this.size + 1;
+        } else if (x1 >= 600 - this.size) {
+            x1 = 600 - this.size - 1;
+        } else if (y1 <= this.size) {
+            y1 = this.size + 1;
+        } else if (y1 >= 450 - this.size) {
+            y1 = 450 - this.size - 1;
+        }
+
+        this.x = x1;
+        this.y = y1;
+        var wayX = (x1 - x2) / r;
+        var wayY = (y1 - y2) / r;
+        var colorNum1 = Math.floor((Math.random() * 255));
+        var colorNum2 = Math.floor((Math.random() * 255));
+        var colorNum3 = Math.floor((Math.random() * 255));
+        var color = "rgba(" + String(colorNum1) + "," + String(colorNum2) + "," + String(colorNum3) + ", 1)";
+        this.update = function() {
+            if (this.x <= this.size) {
+                wayX = -wayX;
+                wayY = wayY;
+            } else if (this.x >= 600 - this.size) {
+                wayX = -wayX;
+                wayY = wayY;
+            } else if (this.y <= this.size) {
+                wayX = wayX;
+                wayY = -wayY;
+            } else if (this.y >= 450 - this.size) {
+                wayX = wayX;
+                wayY = -wayY;
+            }
+            this.x = this.x + wayX;
+            this.y = this.y + wayY;
+        };
+        this.draw = function() {
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+            ctx.stroke();
+        };
+    }
+    </script>
+    <style type="text/css">
+    #cvs {
+        position: absolute;
+        top: 50px;
+        left: 30px;
+    }
+    
+    #cvs2 {
+        position: absolute;
+        top: 50px;
+        left: 30px;
+    }
+    
+    h3 {
+        margin-left: 30px;
+    }
+    </style>
+    <title>shoot</title>
+</head>
+
+<body>
+    <h3>發射圈圈!!</h3>
+    <canvas id="cvs" width="600" height="450" style="border:1px solid #000000"></canvas>
+    <canvas id="cvs2" width="600" height="450" style="border:1px solid #000000"></canvas>
+</body>
+
+</html>
