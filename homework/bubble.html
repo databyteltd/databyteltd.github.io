@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="apple-touch-icon" href="/favicon.png">
     <script type="text/javascript">
-    var ctx;
+    var ctx1;
     var ctx2;
     var objs;
     var x1, x2, y1, y2, r, x3, y3;
@@ -16,7 +16,7 @@
     //網頁讀取完畢後開始執行
     window.onload = function() {
         //球移動圖層
-        ctx = document.getElementById("cvs").getContext("2d");
+        ctx1 = document.getElementById("cvs1").getContext("2d");
         //球預覽圖層 
         ctx2 = document.getElementById("cvs2").getContext("2d");
         //方向線控制與預覽圖層
@@ -31,6 +31,7 @@
 
     //觸發mousedown事件
     function dot1(e) {
+
         //抓取起始點座標
         x1 = e.pageX - ctx2.canvas.offsetLeft;
         y1 = e.pageY - ctx2.canvas.offsetTop;
@@ -106,7 +107,7 @@
     //刷新
     function refresh() {
         //清空畫面
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        ctx1.clearRect(0, 0, ctx1.canvas.width, ctx1.canvas.height);
         //更新物件資料
         for (var i = 0; i < objs.length; i++) {
             objs[i].update();
@@ -179,12 +180,22 @@
         };
         //畫更新後的球
         this.draw = function() {
-            ctx.lineWidth = 2;
-            ctx.strokeStyle = this.color;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-            ctx.stroke();
+            ctx1.lineWidth = 2;
+            ctx1.strokeStyle = this.color;
+            ctx1.beginPath();
+            ctx1.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+            ctx1.stroke();
         };
+    }
+
+    //清除畫面
+    function clearAll() {
+        //清除圖層
+        ctx1.clearRect(0, 0, ctx1.canvas.width, ctx1.canvas.height);
+        ctx2.clearRect(0, 0, ctx2.canvas.width, ctx2.canvas.height);
+        ctx3.clearRect(0, 0, ctx3.canvas.width, ctx3.canvas.height);
+        //初始化陣列
+        objs = [];
     }
     </script>
     <style type="text/css">
@@ -203,13 +214,17 @@
         top: 650px;
         left: 40px;
     }
+    
+    button {
+        margin-left: 10px;
+    }
     </style>
     <title>shoot</title>
 </head>
 
 <body>
-    <h3>發射圈圈!!</h3>
-    <canvas id="cvs" width="900" height="600" style="border:1px solid #000000"></canvas>
+    <h3>發射圈圈!! <button onclick="clearAll();">Clear!</button></h3>
+    <canvas id="cvs1" width="900" height="600" style="border:1px solid #000000"></canvas>
     <canvas id="cvs3" width="900" height="600" style="border:1px solid #000000"></canvas>
     <canvas id="cvs2" width="900" height="600" style="border:1px solid #000000"></canvas>
     <div>
