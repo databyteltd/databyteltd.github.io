@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>To Do List</title>
+    <script type="text/javascript">
+    var container;
+    var textId;
+    var list;
+    var count = 2;
+    window.onload = function() {
+        container = document.getElementById("container");
+        container.addEventListener("keyup", save);
+        container.addEventListener("click", save);
+        var listdata = window.localStorage.getItem("list");
+        if (listdata !== null) {
+            listdata = JSON.parse(listdata);
+
+            if (listdata.length > 3) {
+                count = listdata.length - 1;
+                for (var i = 3; i < listdata.length; i++) {
+                    container.innerHTML += '<div class="content"><input type="checkbox" class="checkbox" id="textBox' + i + '"><input type="text" class="text" id="text' + i + '"></div>';
+                }
+            }
+
+            for (var i = 0; i < listdata.length; i++) {
+                document.getElementById('textBox' + i).checked = listdata[i].checkbox;
+                document.getElementById('text' + i).value = listdata[i].textContent;
+            }
+        }
+
+    };
+
+    function save() {
+        list = [];
+        for (var i = 0; i < count + 1; i++) {
+            var id = "text" + i;
+            var checkbox = document.getElementById('textBox' + i).checked;
+            var textContent = document.getElementById('text' + i).value;
+            intoData(id, checkbox, textContent);
+        }
+        window.localStorage.setItem("list", JSON.stringify(list));
+    }
+
+    function intoData(id, checkbox, textContent) {
+        list.push({
+            id: id,
+            checkbox: checkbox,
+            textContent: textContent
+        });
+    }
+
+    function add() {
+        count++;
+        container.innerHTML += '<div class="content"><input type="checkbox" class="checkbox" id="textBox' + count + '"><input type="text" class="text" id="text' + count + '"></div>';
+        var listdata = window.localStorage.getItem("list");
+        if (listdata !== null) {
+            listdata = JSON.parse(listdata);
+            for (var i = 0; i < listdata.length; i++) {
+                document.getElementById('textBox' + i).checked = listdata[i].checkbox;
+                document.getElementById('text' + i).value = listdata[i].textContent;
+            }
+        }
+    }
+
+    function clearAll() {
+        container.innerHTML = '<div class="title"><p>To DO List</p><button id="save" onclick="clearAll();">Clear</button><button id="add" onclick="add();">Add</button></div><hr><div class="content"><input type="checkbox" class="checkbox" id="textBox0"><input type="text" class="text" id="text0"></div><div class="content"><input type="checkbox" class="checkbox" id="textBox1"><input type="text" class="text" id="text1"></div><div class="content"><input type="checkbox" class="checkbox" id="textBox2"><input type="text" class="text" id="text2"></div>';
+        list = [];
+        count = 2;
+        localStorage.removeItem("list");
+    }
+    </script>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="title">
+            <p>To DO List</p>
+            <button id="save" onclick="clearAll();">Clear</button>
+            <button id="add" onclick="add();">Add</button>
+        </div>
+        <hr>
+        <div class="content">
+            <input type="checkbox" class="checkbox" id="textBox0">
+            <input type="text" class="text" id="text0">
+        </div>
+        <div class="content">
+            <input type="checkbox" class="checkbox" id="textBox1">
+            <input type="text" class="text" id="text1">
+        </div>
+        <div class="content">
+            <input type="checkbox" class="checkbox" id="textBox2">
+            <input type="text" class="text" id="text2">
+        </div>
+    </div>
+</body>
+
+</html>
